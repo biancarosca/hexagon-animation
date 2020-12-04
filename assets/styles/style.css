@@ -26,22 +26,32 @@ body {
 }
 
 .hover {
-  animation: colanim 2s linear;
+  background-color: green;
+  animation: colanim 2s linear,changeCol 20s linear infinite;
 }
 
 .hex-container {
   pointer-events: none;
 }
 
+@keyframes changeCol {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 @keyframes colanim {
   0% {
-    background-color: #4d9900;
+    filter: alpha(opacity=100);
   }
   30% {
-    background-color: rgba(128, 255, 0, 0.5);
+    filter: alpha(opacity=50);
   }
   60% {
-    background-color: rgba(166, 255, 77, 0.3);
+    filter: alpha(opacity=30);
   }
   100% {
     background-color: #2e2c2c;
